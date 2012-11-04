@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  note: MyText
+  rating: 1
+  picture: MyString
+  thumbup: 1
+  thumbdown: 1
+  food_id: 1
+
+two:
+  note: MyText
+  rating: 1
+  picture: MyString
+  thumbup: 1
+  thumbdown: 1
+  food_id: 1

@@ -1,0 +1,33 @@
+<h1>Listing shares</h1>
+
+<table>
+  <tr>
+    <th>Note</th>
+    <th>Rating</th>
+    <th>Picture</th>
+    <th>Thumbup</th>
+    <th>Thumbdown</th>
+    <th>Food</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shares.each do |share| %>
+  <tr>
+    <td><%= share.note %></td>
+    <td><%= share.rating %></td>
+    <td><%= share.picture %></td>
+    <td><%= share.thumbup %></td>
+    <td><%= share.thumbdown %></td>
+    <td><%= share.food_id %></td>
+    <td><%= link_to 'Show', share %></td>
+    <td><%= link_to 'Edit', edit_share_path(share) %></td>
+    <td><%= link_to 'Destroy', share, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Share', new_share_path %>
