@@ -1,22 +1,32 @@
 Yoummies::Application.routes.draw do
-  resources :shares
-  resources :foods
+  
+  resources :foods do
+    resources :posts
+  end
+  
+  resources :posts
+  
 
 end
 
-
-
-#     shares GET    /shares(.:format)          shares#index
-#            POST   /shares(.:format)          shares#create
-#  new_share GET    /shares/new(.:format)      shares#new
-# edit_share GET    /shares/:id/edit(.:format) shares#edit
-#      share GET    /shares/:id(.:format)      shares#show
-#            PUT    /shares/:id(.:format)      shares#update
-#            DELETE /shares/:id(.:format)      shares#destroy
-#      foods GET    /foods(.:format)           foods#index
-#            POST   /foods(.:format)           foods#create
-#   new_food GET    /foods/new(.:format)       foods#new
-#  edit_food GET    /foods/:id/edit(.:format)  foods#edit
-#       food GET    /foods/:id(.:format)       foods#show
-#            PUT    /foods/:id(.:format)       foods#update
-#            DELETE /foods/:id(.:format)       foods#destroy
+# food_posts     GET    /foods/:food_id/posts(.:format)          posts#index
+#                POST   /foods/:food_id/posts(.:format)          posts#create
+#  new_food_post GET    /foods/:food_id/posts/new(.:format)      posts#new
+# edit_food_post GET    /foods/:food_id/posts/:id/edit(.:format) posts#edit
+#      food_post GET    /foods/:food_id/posts/:id(.:format)      posts#show
+#                PUT    /foods/:food_id/posts/:id(.:format)      posts#update
+#                DELETE /foods/:food_id/posts/:id(.:format)      posts#destroy
+#          foods GET    /foods(.:format)                         foods#index
+#                POST   /foods(.:format)                         foods#create
+#       new_food GET    /foods/new(.:format)                     foods#new
+#      edit_food GET    /foods/:id/edit(.:format)                foods#edit
+#           food GET    /foods/:id(.:format)                     foods#show
+#                PUT    /foods/:id(.:format)                     foods#update
+#                DELETE /foods/:id(.:format)                     foods#destroy
+#          posts GET    /posts(.:format)                         posts#index
+#                POST   /posts(.:format)                         posts#create
+#       new_post GET    /posts/new(.:format)                     posts#new
+#      edit_post GET    /posts/:id/edit(.:format)                posts#edit
+#           post GET    /posts/:id(.:format)                     posts#show
+#                PUT    /posts/:id(.:format)                     posts#update
+#                DELETE /posts/:id(.:format)                     posts#destroy

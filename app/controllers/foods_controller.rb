@@ -14,7 +14,9 @@ class FoodsController < ApplicationController
   # GET /foods/1.json
   def show
     @food = Food.find(params[:id])
-
+    @posts = @food.posts
+    @post = Post.new
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @food }
@@ -25,7 +27,7 @@ class FoodsController < ApplicationController
   # GET /foods/new.json
   def new
     @food = Food.new
-    @food.shares.build
+    @food.posts.build
 
     respond_to do |format|
       format.html # new.html.erb

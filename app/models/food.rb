@@ -1,8 +1,8 @@
 class Food < ActiveRecord::Base
-  attr_accessible :category_id, :name, :picture, :price, :shares_attributes
+  attr_accessible :category_id, :name, :picture, :price, :posts_attributes
   
-  has_many :shares
+  has_many :posts
   
-  accepts_nested_attributes_for :shares
+  accepts_nested_attributes_for :posts
   
 end

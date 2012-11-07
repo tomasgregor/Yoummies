@@ -29,7 +29,7 @@
   </div>
   <div class="actions">
 	
-	<%= f.fields_for :shares do |s| %>
+	<%= f.fields_for :posts do |s| %>
 		<div class="field">
 		    <%= s.label :note, 'Why do you recommend this food?' %><br />
 		    <%= s.text_area :note, :rows => 3 %>

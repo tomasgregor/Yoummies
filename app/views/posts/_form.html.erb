@@ -1,10 +1,10 @@
-<%= form_for(@share) do |f| %>
-  <% if @share.errors.any? %>
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@share.errors.count, "error") %> prohibited this share from being saved:</h2>
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-      <% @share.errors.full_messages.each do |msg| %>
+      <% @post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -32,8 +32,7 @@
     <%= f.number_field :thumbdown %>
   </div>
   <div class="field">
-    <%= f.label :food_id %><br />
-    <%= f.number_field :food_id %>
+    <%= f.hidden_field :food_id, :value => @food.id %>
   </div>
   <div class="actions">
     <%= f.submit %>
