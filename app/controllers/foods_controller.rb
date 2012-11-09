@@ -17,6 +17,16 @@ class FoodsController < ApplicationController
     @posts = @food.posts
     @post = Post.new
     
+    @rating_sum = 0
+    @rating = 0
+    @posts.each do |post|
+      if post.rating
+        @rating_sum = @rating_sum + post.rating
+        @rating = @rating + 1
+      end
+    end
+    @rating_avg = (@rating_sum.to_f / @rating.to_f).round(1)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @food }

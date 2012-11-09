@@ -13,6 +13,11 @@
 	  <b>Price:</b>
 	  <%= @food.price %>
 	</p>
+	
+	<p>
+	  <b>Average rating:</b>
+	  <%= @rating_avg %>
+	</p>
 
 	<%= link_to 'Edit', edit_food_path(@food) %> |
 	<%= link_to 'Back', foods_path %>
@@ -23,13 +28,12 @@
 		<ul>
 			<% @posts.each do |post| %>
 			    <li>
-					<%= post.picture %>
-					<%= post.note %>
-					<%= post.rating %>
+					<%= post.note %><br />
+					Rating: <%= post.rating %>
 				</li>
-			    <!-- <td><%= link_to 'Show', post %></td>
-			    			    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-			    			    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+			    <!-- 	<%= link_to 'Show', post %>
+			    		<%= link_to 'Edit', edit_post_path(post) %></td>
+			    		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> -->
 			  </tr>
 			<% end %>
 	<div>
