@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
-<%= render 'top_navigation' %>
+<%= render 'layouts/top_navigation' %>
 <div class="container">
 	<h2>
 	  <%= @food.name %>
 	</h2>
 
 	<p>
-	  <!-- <b>Picture:</b> -->
-	  <%= image_tag @food.picture, :alt => @food.name, :width => 150 %>
+	  <%= image_tag @food.picture_url(:show).to_s, :alt => @food.name %>
 	</p>
 
 	<p>
@@ -20,37 +19,23 @@
 
 	<br />
 	<h3>Food's yoummies</h3>
-	<div class="posts">
-		<table>
-		  <tr>
-		    <th>Note</th>
-		    <th>Rating</th>
-		    <th>Picture</th>
-		    <th>Thumbup</th>
-		    <th>Thumbdown</th>
-		    <th></th>
-		    <th></th>
-		    <th></th>
-		  </tr>
-
-		<% @posts.each do |post| %>
-		  <tr>
-		    <td><%= post.note %></td>
-		    <td><%= post.rating %></td>
-		    <td><%= post.picture %></td>
-		    <td><%= post.thumbup %></td>
-		    <td><%= post.thumbdown %></td>
-		    <td><%= link_to 'Show', post %></td>
-		    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-		    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		  </tr>
-		<% end %>
-		</table>
-		
-		<%= render 'posts/form' %>
-
-		
+	<div class="post">
+		<ul>
+			<% @posts.each do |post| %>
+			    <li>
+					<%= post.picture %>
+					<%= post.note %>
+					<%= post.rating %>
+				</li>
+			    <!-- <td><%= link_to 'Show', post %></td>
+			    			    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+			    			    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+			  </tr>
+			<% end %>
 	<div>
+		
+	<%= render 'posts/form' %>
+
 </div>
 
 

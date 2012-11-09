@@ -1,31 +1,35 @@
-<h1>Listing foods</h1>
+<p id="notice"><%= notice %></p>
+<%= render 'layouts/top_navigation' %>
+<div class="container">
+	<h1>Listing foods</h1>
 
-<table>
-  <tr>
-    <th>ID</th>
-	<th>Name</th>
-    <th>Price</th>
-    <th>Picture</th>
-    <th>Category</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<table>
+	  <tr>
+		<th>Name</th>
+	    <th>Price</th>
+	    <th>Picture</th>
+	    <th>Category</th>
+	    <th></th>
+	  </tr>
 
-<% @foods.each do |food| %>
-  <tr>
-	<td><%= food.id %></td>
-    <td><%= food.name %></td>
-    <td><%= food.price %></td>
-    <td><%= food.picture %></td>
-    <td><%= food.category_id %></td>
-    <td><%= link_to 'Show', food %></td>
-    <td><%= link_to 'Edit', edit_food_path(food) %></td>
-    <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+	<% @foods.each do |food| %>
+	  <tr>
+	    <td><%= link_to food.name, food %></td>
+	    <td><%= food.price %></td>
+	    <td>
+			<% if food.picture_url %>
+				<%= image_tag food.picture_url(:thumb).to_s, :alt => food.name %>
+			<% else %>
+				no picture :(
+			<% end %>
+		</td>
+	    <td><%= food.category_id %></td>
+	    <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
 
-<br />
+	<br />
 
-<%= link_to 'New Food', new_food_path %>
+	<%= link_to 'New Food', new_food_path %>
+</div>

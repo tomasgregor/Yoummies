@@ -5,8 +5,6 @@
     <th>Note</th>
     <th>Rating</th>
     <th>Picture</th>
-    <th>Thumbup</th>
-    <th>Thumbdown</th>
     <th>Food</th>
     <th></th>
     <th></th>
@@ -18,8 +16,6 @@
     <td><%= post.note %></td>
     <td><%= post.rating %></td>
     <td><%= post.picture %></td>
-    <td><%= post.thumbup %></td>
-    <td><%= post.thumbdown %></td>
     <td><%= link_to post.food.name, "#" %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>

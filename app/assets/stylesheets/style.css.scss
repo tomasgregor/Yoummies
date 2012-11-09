@@ -38,7 +38,37 @@ body {
 	padding-right: 20px; 
 	}
 
+.post {
+	
+
+}
+
+.post ul {
+	margin: 0;
+}
+
+.post li {
+	list-style-type: none;
+	margin: 0 0 10px -30px;
+	padding: 5px;
+	border: 1px solid #808;
+}
+
 #notice {
 	text-align: center;
 	font-weight: bold;
 }
+
+.picture {
+	max-width: 200px;
+	max-height: 200px;
+}
+
+
+
+
+
+
+
+
+
