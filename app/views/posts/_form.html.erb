@@ -1,32 +1,28 @@
 <%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+	<% if @post.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	    <ul>
+	    <% @post.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
 
-  <div class="field">
-    <%= f.label :note %><br />
-    <%= f.text_area :note %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.number_field :rating %>
-  </div>
-  <div class="field">
-    <%= f.label :picture %><br />
-    <%= f.text_field :picture %>
-  </div>
-  <div class="field">
-    <%= f.hidden_field :food_id, :value => @food.id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div class="field">
+	  <%= f.label :note, "Add comment" %><br />
+	  <%= f.text_area :note, :rows => 3 %>
+	</div>
+	<div class="field">
+		<%= f.label :rating %><br />
+	    <%= f.select :rating, { "Select" => nil, "*" => "1", "**" => "2", "***" => "3", "****" => "4", "*****" => "5"} %>
+	</div>
+	<div class="field">
+	  <%= f.hidden_field :food_id, :value => @food.id %>
+	</div>
+	<div class="actions">
+	  <%= f.submit %>
+	</div>
 <% end %>
