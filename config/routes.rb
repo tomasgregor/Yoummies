@@ -1,6 +1,4 @@
 Yoummies::Application.routes.draw do
-  
-  resources :users
 
   root :to => "foods#index"
   
@@ -9,7 +7,8 @@ Yoummies::Application.routes.draw do
   end
   
   resources :posts
-  
+ 
+  resources :users 
 
 end
 
