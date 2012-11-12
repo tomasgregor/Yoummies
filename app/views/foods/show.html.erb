@@ -8,7 +8,7 @@
 	</h2>
 
 	<p>
-	  <%= image_tag @food.picture_url(:show).to_s, :alt => @food.name %>
+	  <%= image_tag @food.picture_url(:show).to_s, :alt => @food.name, :class => "picture" %>
 	</p>
 
 	<p>
@@ -21,8 +21,7 @@
 	  <%= @rating_avg %>
 	</p>
 
-	<%= link_to 'Edit', edit_food_path(@food) %> |
-	<%= link_to 'Back', foods_path %>
+	<%= link_to 'Edit', edit_food_path(@food) %>
 
 	<br />
 	<h3>Food's yoummies</h3>

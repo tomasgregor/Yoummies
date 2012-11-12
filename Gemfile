@@ -25,6 +25,12 @@ gem 'jquery-rails'
 gem 'rmagick'
 gem 'carrierwave'
 
+# rake diagram:all
+# This should generate four doc/*.svg files that can be opened in (most) web browsers as well as dedicate document viewers supporting the Scalable Vector Graphics format.
+group :development, :test do
+    gem 'railroady'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

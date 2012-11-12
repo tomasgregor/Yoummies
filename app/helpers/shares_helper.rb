@@ -1,2 +1,2 @@
-module SharesHelper
+module PostsHelper
 end
