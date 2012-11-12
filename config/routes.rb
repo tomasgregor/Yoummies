@@ -2,6 +2,8 @@ Yoummies::Application.routes.draw do
 
   root :to => "foods#index"
   
+  resources :session, :only => [:new, :create, :destory]
+  
   resources :foods do
     resources :posts
   end
@@ -12,6 +14,9 @@ Yoummies::Application.routes.draw do
 
 end
 
+# session_index POST   /session(.:format)                       session#create
+#    new_session GET    /session/new(.:format)                   session#new
+# 
 # food_posts     GET    /foods/:food_id/posts(.:format)          posts#index
 #                POST   /foods/:food_id/posts(.:format)          posts#create
 #  new_food_post GET    /foods/:food_id/posts/new(.:format)      posts#new
@@ -19,6 +24,7 @@ end
 #      food_post GET    /foods/:food_id/posts/:id(.:format)      posts#show
 #                PUT    /foods/:food_id/posts/:id(.:format)      posts#update
 #                DELETE /foods/:food_id/posts/:id(.:format)      posts#destroy
+# 
 #          foods GET    /foods(.:format)                         foods#index
 #                POST   /foods(.:format)                         foods#create
 #       new_food GET    /foods/new(.:format)                     foods#new
@@ -26,6 +32,7 @@ end
 #           food GET    /foods/:id(.:format)                     foods#show
 #                PUT    /foods/:id(.:format)                     foods#update
 #                DELETE /foods/:id(.:format)                     foods#destroy
+# 
 #          posts GET    /posts(.:format)                         posts#index
 #                POST   /posts(.:format)                         posts#create
 #       new_post GET    /posts/new(.:format)                     posts#new
