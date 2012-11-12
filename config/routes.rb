@@ -1,5 +1,7 @@
 Yoummies::Application.routes.draw do
   
+  resources :users
+
   root :to => "foods#index"
   
   resources :foods do
