@@ -31,7 +31,6 @@
     <%= f.label :category_id %><br />
     <%= f.text_field :category_id %>
   </div>
-  <div class="actions">
 	
 	<%= f.fields_for :posts do |s| %>
 		<div class="field">
@@ -44,6 +43,7 @@
 		</div>
 	<% end %>
 	
+  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
