@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :food_id, :note, :picture, :rating
+  attr_accessible :note, :picture, :rating, :food_id 
   
   belongs_to :food
   

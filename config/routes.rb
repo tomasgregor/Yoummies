@@ -10,11 +10,13 @@ Yoummies::Application.routes.draw do
     resources :posts
   end
   
+  resources :users
   resources :posts
+  resources :prices
  
-  resources :users 
-
 end
+
+
 
       #     root        /                                        foods#index
       # sign_out GET    /logout(.:format)                        sessions#destroy

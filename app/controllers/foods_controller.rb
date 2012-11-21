@@ -9,6 +9,7 @@ class FoodsController < ApplicationController
   def show
     @food = Food.find(params[:id])
     @posts = @food.posts
+    @prices = @food.prices
     @post = Post.new
     
     @rating_sum = 0
@@ -25,6 +26,7 @@ class FoodsController < ApplicationController
   # GET /foods/new
   def new
     @food = Food.new
+    @food.prices.build
     @food.posts.build
   end
 
@@ -37,12 +39,10 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(params[:food])
 
-    respond_to do |format|
-      if @food.save
-        redirect_to @food, notice: 'Food was successfully created.'
-      else
-        render action: "new"
-      end
+    if @food.save
+      redirect_to @food, notice: 'Food was successfully created.'
+    else
+      render action: "new"
     end
   end
 

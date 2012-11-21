@@ -6,7 +6,6 @@
 	<table>
 	  <tr>
 		<th>Name</th>
-	    <th>Price</th>
 	    <th>Picture</th>
 	    <th>Category</th>
 	    <th></th>
@@ -15,7 +14,6 @@
 	<% @foods.each do |food| %>
 	  <tr>
 	    <td><%= link_to food.name, food %></td>
-	    <td><%= food.price %></td>
 	    <td>
 			<% if food.picture_url %>
 				<%= image_tag food.picture_url(:thumb).to_s, :alt => food.name %>
