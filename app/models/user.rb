@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :surname
+  attr_accessible :email, :fname, :password, :password_confirmation, :lname
   
   has_many :foods
   
