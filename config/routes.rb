@@ -1,5 +1,7 @@
 Yoummies::Application.routes.draw do
 
+  resources :shops
+
   root :to => "foods#index"
   
   get   "/logout" => "sessions#destroy", :as => 'sign_out'
