@@ -8,7 +8,8 @@ class FoodsController < ApplicationController
   # GET /foods/1
   def show
     @food = Food.find(params[:id])
-    @posts = @food.posts
+    @postable = @food
+    @posts = @postable.posts
     @prices = @food.prices
     @post = Post.new
     
@@ -21,6 +22,7 @@ class FoodsController < ApplicationController
       end
     end
     @rating_avg = (@rating_sum.to_f / @rating.to_f).round(1)
+    
   end
 
   # GET /foods/new

@@ -1,10 +1,18 @@
 class PostsController < ApplicationController
+  
+# from Railscast http://railscasts.com/episodes/154-polymorphic-association-revised?view=asciicast
+# before_filter & create method functions only if routes are not changed (URL path /food/23 etc)
+  before_filter :load_postable, :except => :index
+  
+    def load_postable
+      klass = [Food, Shop].detect { |c| params["#{c.name.underscore}_id"]}
+      @postable = klass.find(params["#{klass.name.underscore}_id"])
+    end
+  
   # GET /posts
   def index
     @posts = Post.all
   end
-
-
 
   # GET /posts/1/edit
   def edit
@@ -13,9 +21,9 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = Post.new(params[:post])
+    @post = @postable.posts.new(params[:post])
     if @post.save
-      redirect_to @post.food, notice: 'Post was successfully created.'
+      redirect_to @postable, notice: 'Post was successfully created.'
     else
       render action: @post.food, notice: 'Post was not created.'
     end
@@ -41,4 +49,5 @@ class PostsController < ApplicationController
 
     redirect_to posts_url
   end
+
 end

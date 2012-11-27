@@ -8,7 +8,7 @@
 	    <th>Note</th>
 	    <th>Rating</th>
 	    <th>Picture</th>
-	    <th>Food</th>
+	    <th>Food / Shop</th>
 	    <th></th>
 	    <th></th>
 	    <th></th>
@@ -19,12 +19,11 @@
 	    <td><%= post.note %></td>
 	    <td><%= post.rating %></td>
 	    <td><%= post.picture %></td>
-	    <td>
-			<% if post.food %>
-				<%= link_to post.food.name, food_url(post.food_id) %>
-			<% end %>
+	    <td><% if post.postable  %>
+				<%= link_to post.postable.name, post.postable %>
+			<% end  %>
 		</td>
-	    <td><%= link_to 'Show', post %></td>
+		<td><%= link_to 'Show', post %></td>
 	    <td><%= link_to 'Edit', edit_post_path(post) %></td>
 	    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	  </tr>

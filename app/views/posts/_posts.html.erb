@@ -1,0 +1,10 @@
+<div class="post">
+	<ul>
+		<% @posts.each do |post| %>
+		    <li>
+				<%= post.note %><br />
+				Rating: <%= post.rating %>
+			</li>
+		<% end %>
+	</ul>
+<div>
