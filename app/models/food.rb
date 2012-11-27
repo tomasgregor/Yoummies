@@ -5,6 +5,8 @@ class Food < ActiveRecord::Base
   belongs_to :category
   has_many :posts
   has_many :prices
+  has_many :shops, :through => :locations
+  
   
   accepts_nested_attributes_for :prices
   accepts_nested_attributes_for :posts
