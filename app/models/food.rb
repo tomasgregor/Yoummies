@@ -3,7 +3,7 @@ class Food < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :category
-  has_many :posts
+  has_many :posts, :as => :postable
   has_many :prices
   has_many :shops, :through => :locations
   

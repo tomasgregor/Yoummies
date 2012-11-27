@@ -3,5 +3,6 @@ class Shop < ActiveRecord::Base
   
   belongs_to :user
   has_many :foods, :through => :locations
+  has_many :posts, :as => :postable
   
 end
