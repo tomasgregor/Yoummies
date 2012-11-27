@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   
   has_many :foods
   has_many :shops
+  has_many :posts
   
   has_secure_password
   
